@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
+    "username": "raider",
+    "password": "raider_dev",
+    "database": "inventory_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "username": "raider",
+    "password": "raider_dev",
+    "database": "inventory_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
+    "username": "raider",
+    "password": "raider_dev",
+    "database": "inventory_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

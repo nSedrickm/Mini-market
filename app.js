@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var Sequelize = require('sequelize');
 
 var routes = require('./routes/index');
 
@@ -11,6 +12,13 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+// database setup
+
+var sequelize = new Sequelize('inventory', 'raider', 'raider_dev', {
+  host: 'localhost',
+  dialect:'mysql'
+});
 
 app.use(logger('dev'));
 app.use(express.json());

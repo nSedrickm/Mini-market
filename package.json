@@ -13,6 +13,7 @@
     "http-errors": "~1.6.3",
     "mariadb": "^2.4.0",
     "morgan": "~1.9.1",
+    "mysql2": "^2.1.0",
     "sequelize": "^5.21.2",
     "sleek-dashboard": "^1.0.0-beta.5"
   },
