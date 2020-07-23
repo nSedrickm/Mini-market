@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var Sequelize = require('sequelize');
 
 var routes = require('./routes/index');
 
@@ -15,10 +14,6 @@ app.set('view engine', 'hbs');
 
 // database setup
 
-var sequelize = new Sequelize('inventory', 'raider', 'raider_dev', {
-  host: 'localhost',
-  dialect:'mysql'
-});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -29,12 +24,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
