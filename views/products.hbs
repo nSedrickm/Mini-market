@@ -1,81 +1,51 @@
 <div class="content">
 
-    <div class="row">
-        <div class="col-12">
-            <div class="card card-default">
-                <div class="card-header card-header-border-bottom d-flex justify-content-between">
-                    <h2>Products</h2>
+    <div class="card card-default">
+        <div class="card-header card-header-border-bottom d-flex justify-content-between">
+            <h2>Products</h2>
 
-                    <a href="https://datatables.net/examples/styling/display.html" target="_blank"
-                        class="btn btn-outline-primary btn-sm text-uppercase">
-                        <i class=" mdi mdi-link mr-1"></i> Docs
-                    </a>
-                </div>
-
-                <div class="card-body">
-                    <div class="basic-data-table">
-                        <table id="basic-data-table" class="table nowrap" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>PRODUCT NAME</th>
-                                    <th>CATEGORY</th>
-                                    <th>QUANTITY</th>
-                                    <th>UNIT PRICE</th>
-                                    <th>SUPPLIER NAME</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>milk</td>
-                                    <td>groceries</td>
-                                    <td>15</td>
-                                    <td>150</td>
-                                    <td>CAMLAIT</td>
-                                </tr>
-
-                                <tr>
-                                    <td>milk</td>
-                                    <td>groceries</td>
-                                    <td>15</td>
-                                    <td>150</td>
-                                    <td>CAMLAIT</td>
-                                </tr>
-                                <tr>
-                                    <td>milk</td>
-                                    <td>groceries</td>
-                                    <td>15</td>
-                                    <td>150</td>
-                                    <td>CAMLAIT</td>
-                                </tr>
-                                <tr>
-                                    <td>milk</td>
-                                    <td>groceries</td>
-                                    <td>15</td>
-                                    <td>150</td>
-                                    <td>CAMLAIT</td>
-                                </tr>
-                                <tr>
-                                    <td>milk</td>
-                                    <td>groceries</td>
-                                    <td>15</td>
-                                    <td>150</td>
-                                    <td>CAMLAIT</td>
-                                </tr>
-                                <tr>
-                                    <td>milk</td>
-                                    <td>groceries</td>
-                                    <td>15</td>
-                                    <td>150</td>
-                                    <td>CAMLAIT</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+            <a href="/new-product" target="_blank" class="btn btn-primary text-uppercase">
+                <i class=" mdi mdi-link mr-1"></i> Add Product
+            </a>
         </div>
 
+        <div class="card-body">
+            <div class="basic-data-table">
+                <table id="basic-data-table" class="table nowrap" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>PRODUCT</th>
+                            <th>CATEGORY</th>
+                            <th>PRICE/FRS</th>
+                            <th>QUANTITY</th>
+                            <th>SUPPLIER</th>
+                            <th>CREATED</th>
+                            <th>UPDATE</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {{#each data}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{category}}</td>
+                            <td>{{price}}</td>
+                            <td>{{quantity}}</td>
+                            <td>{{supplier}}</td>
+                            <td>{{created_at}}</td>
+                            <td>
+                                <form class="form" method="get" action="/productID">
+                                    <input type="hidden" name="id" value="{{id}}"><button
+                                        class="btn btn-info">edit</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {{/each}}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
