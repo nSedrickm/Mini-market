@@ -4,10 +4,19 @@ var router = express.Router();
 const productsController = require("../controllers/products.controller");
 const mysqlConn = require('../config/db.config');
 
-router.get('/', productsController.findAll);
+router.get('/', function (req, res) {
+    res.render('home');
+});
+
+router.get('/new_product', function (req, res) {
+    res.render('create_product');
+});
+
+router.get('/products', productsController.findAll);
+
 
 // Create a new product
-router.post('/', productsController.create);
+router.post('/create_product', productsController.create);
 
 // Retrieve a single product with id
 router.get('/:id', productsController.findById);

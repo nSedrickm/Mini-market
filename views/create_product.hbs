@@ -2,50 +2,46 @@
     <div class="content">
         <div class="row">
             <div class="col-lg-6 mx-auto">
-                <form method="post" action="/">
-                    {{#if data}}
-                    <input type="hidden" value="{{data.id}}" id="id" name="id">
-                    {{/if}}
+                <form method="post" action="/create_product">
+
+                    <input type="hidden" id="id" name="id">
 
                     <div class="form-group">
                         <label for="name">PRODUCT NAME</label>
-                        <input type="text" class="form-control" id="name" aria-describedby="name"
-                            placeholder="product name" value={{data.name}}>
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="name"
+                            placeholder="product name">
                     </div>
                     <div class="form-group">
                         <label for="category">CATEGORY</label>
-                        <input type="text" class="form-control" id="category" placeholder="category"
-                            value="{{data.category}}">
+                        <input type="text" class="form-control" id="category" name="category" placeholder="category">
                     </div>
                     <div class="form-group">
                         <label for="price">UNIT PRICE</label>
-                        <input type="number" class="form-control" id="price" placeholder="price" value="{{data.price}}">
+                        <input type="number" class="form-control" id="price" name="price" placeholder="price">
                     </div>
                     <div class="form-group">
                         <label for="quantity">QUANTITY</label>
-                        <input type="number" class="form-control" id="quantity" placeholder="quantity"
-                            value="{{data.quantity}}">
+                        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity">
                     </div>
                     <div class="form-group">
                         <label for="supplier">SUPPLIER</label>
-                        <input type="text" class="form-control" id="supplier" placeholder="supplier"
-                            value="{{data.supplier}}">
+                        <input type="text" class="form-control" id="supplier" name="supplier" placeholder="supplier">
                     </div>
                     <div class="form-group d-none">
-                        <label for="created">Created</label>
-                        <input type="date" class="form-control" id="created" placeholder="created"
-                            value="{{data.created_at}}">
+                        <label for="created_at">Created</label>
+                        <input type="date" class="form-control" id="created_at" name="created_at" placeholder="created">
                     </div>
 
                     <div class="form-group d-none">
                         <label for="created">updated</label>
-                        <input type="date" class="form-control" id="created" placeholder="created"
-                            value="{{data.updated_at}}">
+                        <input type="date" class="form-control" id="created" placeholder="created">
                     </div>
 
-
-                    <button type="submit"
-                        class="btn btn-primary d-block w-100">{{#if data}}Save{{else}}Create{{/if}}</button>
+                    <button type="submit" class="ladda-button btn btn-primary btn-square btn-ladda w-100"
+                        data-style="expand-left">
+                        <span class="ladda-label">Create</span>
+                        <span class="ladda-spinner"></span>
+                    </button>
                 </form>
             </div>
         </div>

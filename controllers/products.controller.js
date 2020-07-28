@@ -26,7 +26,8 @@ exports.create = function (req, res) {
         products.create(new_product, function (err, products) {
             if (err)
                 res.send(err);
-            res.json({ error: false, message: "product added successfully!", data: products });
+            /*res.json({ error: false, message: "product added successfully!", data: products }); */
+            res.redirect("/products")
         });
     }
 };

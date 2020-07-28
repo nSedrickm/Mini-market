@@ -5,9 +5,9 @@ var products = function (product) {
     this.name = product.name;
     this.category = product.category;
     this.price = product.price;
+    this.quantity = product.quantity;
     this.supplier = product.supplier;
     this.created_at = new Date();
-    this.updated_at = new Date();
 };
 
 products.getAll = result => {
@@ -58,7 +58,7 @@ products.findAll = function (result) {
     });
 };
 products.update = function (id, product, result) {
-    mysqlConn.query("UPDATE products SET name=?,category=?,price=?,quantity=?,supplier=?,created_at=?,updated_at=? WHERE id = ?", [product.fname, product.category, product.price, product.quantity, product.supplier, product.created_at, product.updated_at, id], function (err, res) {
+    mysqlConn.query("UPDATE products SET name=?,category=?,price=?,quantity=?,supplier=?,created_at=? WHERE id = ?", [product.name, product.category, product.price, product.quantity, product.supplier, product.created_at, id], function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(null, err);
