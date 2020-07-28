@@ -22,7 +22,7 @@ router.post('/create_product', productsController.create);
 router.get('/:id', productsController.findById);
 
 // Update a product with id
-router.put('/update/:id', productsController.update);
+router.put('/update', productsController.update);
 
 // Delete a product with id
 router.delete('/delete/:id', productsController.delete);

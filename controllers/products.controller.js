@@ -39,7 +39,7 @@ exports.findById = function (req, res) {
         if (err) {
             res.send(err);
         }
-        res.render('create_product', {
+        res.render('edit_product', {
             title: 'Mini Market',
             data: results
         });

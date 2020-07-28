@@ -2,50 +2,43 @@
     <div class="content">
         <div class="row">
             <div class="col-lg-6 mx-auto">
-                <form method="post" action="/create_product">
-                    {{#if data}}
-                    <input type="hidden" value="{{data.id}}" id="id" name="id">
-                    {{/if}}
+                <form method="put" action="/update">
+                    {{#each data}}
+                    <input type="hidden" value="{{id}}" id="id" name="id">
 
                     <div class="form-group">
                         <label for="name">PRODUCT NAME</label>
                         <input type="text" class="form-control" id="name" aria-describedby="name"
-                            placeholder="product name" value={{data.name}}>
+                            placeholder="product name" value={{name}}>
                     </div>
                     <div class="form-group">
                         <label for="category">CATEGORY</label>
                         <input type="text" class="form-control" id="category" placeholder="category"
-                            value="{{data.category}}">
+                            value="{{category}}">
                     </div>
                     <div class="form-group">
                         <label for="price">UNIT PRICE</label>
-                        <input type="number" class="form-control" id="price" placeholder="price" value="{{data.price}}">
+                        <input type="number" class="form-control" id="price" placeholder="price" value="{{price}}">
                     </div>
                     <div class="form-group">
                         <label for="quantity">QUANTITY</label>
                         <input type="number" class="form-control" id="quantity" placeholder="quantity"
-                            value="{{data.quantity}}">
+                            value="{{quantity}}">
                     </div>
                     <div class="form-group">
                         <label for="supplier">SUPPLIER</label>
                         <input type="text" class="form-control" id="supplier" placeholder="supplier"
-                            value="{{data.supplier}}">
+                            value="{{supplier}}">
                     </div>
                     <div class="form-group d-none">
                         <label for="created">Created</label>
                         <input type="date" class="form-control" id="created" placeholder="created"
-                            value="{{data.created_at}}">
+                            value="{{created_at}}">
                     </div>
 
-                    <div class="form-group d-none">
-                        <label for="created">updated</label>
-                        <input type="date" class="form-control" id="created" placeholder="created"
-                            value="{{data.updated_at}}">
-                    </div>
+                    {{/each}}
 
-
-                    <button type="submit"
-                        class="btn btn-primary d-block w-100">{{#if data}}Save{{else}}Create{{/if}}</button>
+                    <button type="submit" class="btn btn-primary d-block w-100">Update</button>
                 </form>
             </div>
         </div>
