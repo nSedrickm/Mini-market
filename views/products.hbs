@@ -35,14 +35,13 @@
                             <td>{{supplier}}</td>
                             <td>{{created_at}}</td>
                             <td>
-                                <form class="form" method="get" action="/productID">
+                                <form class="form" method="get" action="/:id">
                                     <input type="hidden" name="id" value="{{id}}"><button
-                                        class="btn btn-info">edit</button>
+                                        class="btn btn-info">details</button>
                                 </form>
                             </td>
                         </tr>
                         {{/each}}
-
                     </tbody>
                 </table>
             </div>
