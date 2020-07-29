@@ -19,10 +19,10 @@ router.get('/products', productsController.findAll);
 router.post('/create_product', productsController.create);
 
 // Retrieve a single product with id
-router.get('/:id', productsController.findById);
+router.post('/findId', productsController.findById);
 
 // Update a product with id
-router.put('/update', productsController.update);
+router.post('/update', productsController.update);
 
 // Delete a product with id
 router.delete('/delete/:id', productsController.delete);

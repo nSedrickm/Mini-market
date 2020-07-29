@@ -21,7 +21,17 @@ products.getAll = result => {
     });
 
 }
-
+products.findAll = function (result) {
+    mysqlConn.query("Select * from products", function (err, res) {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+        }
+        else {
+            result(null, res);
+        }
+    });
+};
 products.create = function (newProd, result) {
     mysqlConn.query("INSERT INTO products set ?", newProd, function (err, res) {
         if (err) {
@@ -45,20 +55,11 @@ products.findById = function (id, result) {
         }
     });
 };
-products.findAll = function (result) {
-    mysqlConn.query("Select * from products", function (err, res) {
-        if (err) {
-            console.log("error: ", err);
-            result(null, err);
-        }
-        else {
-            console.log('products : ', res);
-            result(null, res);
-        }
-    });
-};
+
 products.update = function (id, product, result) {
-    mysqlConn.query("UPDATE products SET name=?,category=?,price=?,quantity=?,supplier=?,created_at=? WHERE id = ?", [product.name, product.category, product.price, product.quantity, product.supplier, product.created_at, id], function (err, res) {
+
+    console.log(product);
+    mysqlConn.query("UPDATE products SET name= ? WHERE id = ?", [product.name, id], function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -67,6 +68,7 @@ products.update = function (id, product, result) {
         }
     });
 };
+
 products.delete = function (id, result) {
     mysqlConn.query("DELETE FROM products WHERE id = ?", [id], function (err, res) {
         if (err) {

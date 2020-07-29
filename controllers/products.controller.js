@@ -34,8 +34,8 @@ exports.create = function (req, res) {
 
 
 exports.findById = function (req, res) {
-    products.findById(req.query.id, function (err, results) {
-        console.log(req.query)
+    products.findById(req.body.id, function (err, results) {
+        console.log(results)
         if (err) {
             res.send(err);
         }
@@ -48,16 +48,12 @@ exports.findById = function (req, res) {
 
 
 exports.update = function (req, res) {
-    if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
-        res.status(400).send({ error: true, message: 'Please provide all required fields' });
-    } else {
-        products.update(req.params.id, new products(req.body), function (err, product) {
-            if (err)
-                res.send(err);
-            res.json({ error: false, message: 'product successfully updated' });
-        });
-    }
-
+    console.log(req.body);
+    products.update(req.body, function (err, product) {
+        if (err)
+            res.send(err);
+        res.json({ error: false, message: 'product successfully updated' });
+    });
 };
 
 

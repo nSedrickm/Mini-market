@@ -2,14 +2,14 @@
     <div class="content">
         <div class="row">
             <div class="col-lg-6 mx-auto">
-                <form method="put" action="/update">
+                <form method="post" action="/create_product">
                     {{#each data}}
                     <input type="hidden" value="{{id}}" id="id" name="id">
 
                     <div class="form-group">
                         <label for="name">PRODUCT NAME</label>
                         <input type="text" class="form-control" id="name" aria-describedby="name"
-                            placeholder="product name" value={{name}}>
+                            placeholder="product name" value="{{name}}">
                     </div>
                     <div class="form-group">
                         <label for="category">CATEGORY</label>
@@ -30,7 +30,7 @@
                         <input type="text" class="form-control" id="supplier" placeholder="supplier"
                             value="{{supplier}}">
                     </div>
-                    <div class="form-group d-none">
+                    <div class="form-group">
                         <label for="created">Created</label>
                         <input type="date" class="form-control" id="created" placeholder="created"
                             value="{{created_at}}">
