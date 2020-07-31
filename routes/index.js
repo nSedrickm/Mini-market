@@ -5,6 +5,28 @@ const productsController = require("../controllers/products.controller");
 const mysqlConn = require('../config/db.config');
 
 router.get('/', function (req, res) {
+    res.render('login', {
+        layout: false,
+        title: "login"
+    });
+});
+
+router.post("/login", function (req, res) {
+    //login processing goes here
+});
+
+router.get('/register', function (req, res) {
+    res.render('register', {
+        layout: false,
+        title: "register"
+    });
+});
+
+router.post('/register', function (req, res) {
+    // registration process gotes here
+});
+
+router.get('/home', function (req, res) {
     res.render('home');
 });
 
