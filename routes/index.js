@@ -4,6 +4,12 @@ var router = express.Router();
 const productsController = require("../controllers/products.controller");
 const mysqlConn = require('../config/db.config');
 
+
+/******** *********
+ * login and registration block
+ *
+ * ********* **********/
+
 router.get('/', function (req, res) {
     res.render('login', {
         layout: false,
@@ -30,12 +36,17 @@ router.get('/home', function (req, res) {
     res.render('home');
 });
 
+
+/******** *********
+ * products block
+ *
+ * ********* **********/
+
 router.get('/new_product', function (req, res) {
     res.render('create_product');
 });
-
+// Get all products
 router.get('/products', productsController.findAll);
-
 
 // Create a new product
 router.post('/create_product', productsController.create);
@@ -48,5 +59,25 @@ router.post('/update', productsController.update);
 
 // Delete a product with id
 router.delete('/delete/:id', productsController.delete);
+
+
+/******** *********
+ * Orders block
+ *
+ * ********* **********/
+
+router.get('/orders', function (req, res) {
+    res.render('orders');
+});
+
+
+/******** *********
+ * reports block
+ *
+ * ********* **********/
+
+router.get('/reports', function (req, res) {
+    res.render('reports');
+});
 
 module.exports = router;
