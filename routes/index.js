@@ -42,14 +42,17 @@ router.get('/home', function (req, res) {
  *
  * ********* **********/
 
-router.get('/new_product', function (req, res) {
-    res.render('create_product');
-});
+
 // Get all products
 router.get('/products', productsController.findAll);
 
 // Create a new product
 router.post('/create_product', productsController.create);
+
+// render create_product
+router.get('/create_product', function (req, res) {
+    res.render('create_product');
+});
 
 // Retrieve a single product with id
 router.post('/findId', productsController.findById);
@@ -69,6 +72,11 @@ router.delete('/delete/:id', productsController.delete);
 router.get('/orders', function (req, res) {
     res.render('orders');
 });
+
+router.get('/create_order', function (req, res) {
+    res.render('create_order');
+});
+
 
 
 /******** *********

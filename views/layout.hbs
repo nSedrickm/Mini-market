@@ -92,22 +92,29 @@
           </a>
         </div>
         <!-- begin sidebar scrollbar -->
-        <div class="sidebar-scrollbar">
+        <div class="sidebar-scrollbar-sm">
 
           <!-- sidebar menu -->
           <ul class="nav sidebar-inner" id="sidebar-menu">
 
             <li class="has-sub active">
-              <a class="sidenav-item-link" href="/" aria-expanded="false" aria-controls="app">
+              <a class="sidenav-item-link" href="/home" aria-expanded="false" aria-controls="app">
                 <i class="mdi mdi-home"></i>
-                <span class="nav-text">home</span> <b class="caret"></b>
+                <span class="nav-text">Home</span> <b class="caret"></b>
+              </a>
+            </li>
+
+            <li class="has-sub">
+              <a class="sidenav-item-link" href="/create_order" aria-expanded="false" aria-controls="app">
+                <i class="mdi mdi-pencil-box-multiple"></i>
+                <span class="nav-text">New Order</span> <b class="caret"></b>
               </a>
             </li>
 
             <li class="has-sub">
               <a class="sidenav-item-link" href="/create_product" aria-expanded="false" aria-controls="app">
                 <i class="mdi mdi-pencil-box-multiple"></i>
-                <span class="nav-text">New Order</span> <b class="caret"></b>
+                <span class="nav-text">New Product</span> <b class="caret"></b>
               </a>
             </li>
 
@@ -124,7 +131,7 @@
               </a>
             </li>
             <li class="has-sub">
-              <a class="sidenav-item-link" href="/report" aria-expanded="false" aria-controls="app">
+              <a class="sidenav-item-link" href="/reports" aria-expanded="false" aria-controls="app">
                 <i class="mdi mdi-book"></i>
                 <span class="nav-text">Reports</span> <b class="caret"></b>
               </a>
@@ -342,6 +349,7 @@
       </footer>
 
     </div>
+
   </div>
 
   <script src="/assets/plugins/jquery/jquery.min.js"></script>
