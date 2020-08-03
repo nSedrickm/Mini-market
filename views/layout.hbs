@@ -13,8 +13,9 @@
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500"
-    rel="stylesheet" />
-  <link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" />
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" media="print"
+    onload="this.media='all'" />
 
 
   <!-- PLUGINS CSS STYLE -->
@@ -55,6 +56,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   <script src="/assets/plugins/nprogress/nprogress.js"></script>
+
+  <!-- this is really strange but necessary to load it here -->
+  <script src="/assets/plugins/jquery/jquery.min.js"></script>
 </head>
 
 
@@ -352,24 +356,24 @@
 
   </div>
 
-  <script src="/assets/plugins/jquery/jquery.min.js"></script>
-  <script src="/assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
-  <script src="/assets/plugins/jekyll-search.min.js"></script>
+
+  <script defer src="/assets/plugins/slimscrollbar/jquery.slimscroll.min.js"></script>
+  <script defer src="/assets/plugins/jekyll-search.min.js"></script>
 
 
 
-  <script src="/assets/plugins/charts/Chart.min.js"></script>
+  <script defer src="/assets/plugins/charts/Chart.min.js"></script>
 
 
 
-  <script src="/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
-  <script src="/assets/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
+  <script defer src="/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+  <script defer src="/assets/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
 
 
 
-  <script src="/assets/plugins/daterangepicker/moment.min.js"></script>
-  <script src="/assets/plugins/daterangepicker/daterangepicker.js"></script>
-  <script>
+  <script defer src="/assets/plugins/daterangepicker/moment.min.js"></script>
+  <script defer src="/assets/plugins/daterangepicker/daterangepicker.js"></script>
+  <script onload>
     jQuery(document).ready(function () {
       jQuery('input[name="dateRange"]').daterangepicker({
         autoUpdateInput: false,
@@ -389,11 +393,11 @@
 
 
 
-  <script src="/assets/plugins/toastr/toastr.min.js"></script>
+  <script defer src="/assets/plugins/toastr/toastr.min.js"></script>
 
 
 
-  <script src="/assets/js/sleek.bundle.js"></script>
+  <script defer src="/assets/js/sleek.bundle.js"></script>
 </body>
 
 </html>
