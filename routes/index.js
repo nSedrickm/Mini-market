@@ -62,7 +62,7 @@ router.post('/findId', productsController.findById);
 router.post('/update_product', productsController.update);
 
 // Delete a product with id
-router.delete('/delete/:id', productsController.delete);
+router.post('/delete_product', productsController.delete);
 
 
 /******** *********

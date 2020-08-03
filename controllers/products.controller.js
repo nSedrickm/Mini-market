@@ -58,7 +58,7 @@ exports.update = function (req, res) {
 
 
 exports.delete = function (req, res) {
-    products.delete(req.params.id, function (err, product) {
+    products.delete(req.body.id, function (err, product) {
         if (err)
             res.send(err);
         res.json({ error: false, message: 'product successfully deleted' });

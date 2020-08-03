@@ -11,17 +11,6 @@ var products = function (product) {
     this.time = product.time;
 };
 
-products.getAll = result => {
-    mysqlConn.query("SELECT * FROM products ", (err, res) => {
-        if (err) {
-            console.log("error: ", err);
-            result(null, err);
-            return;
-        }
-        result(null, res);
-    });
-
-}
 products.findAll = function (result) {
     mysqlConn.query("Select * from products", function (err, res) {
         if (err) {
