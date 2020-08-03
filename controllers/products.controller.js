@@ -73,6 +73,12 @@ exports.delete = function (req, res) {
     products.delete(req.body.id, function (err, product) {
         if (err)
             res.send(err);
-        res.json({ error: false, message: 'product successfully deleted' });
+        //res.json({ error: false, message: 'product successfully deleted' });
+        res.render("products", {
+            data: false,
+            title: "Product Deleted",
+            message: "Product deleted successfully",
+            alert: true
+        });
     });
 };

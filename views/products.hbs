@@ -1,5 +1,15 @@
 <div class="content">
+    {{#if alert}}
+    <div class="alert alert-danger alert-dismissible fade show m-3 shadow" role="alert">
+        {{message}}
+        <a type="button" href="/products" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </a>
+    </div>
+    <a class="btn btn-primary mx-3" href="/products">All products</a>
+    {{/if}}
 
+    {{#if data}}
     <div class="card">
         <div class="card-header bg-white card-header-border-bottom d-flex justify-content-between">
             <h1>Products</h1>
@@ -56,4 +66,6 @@
             </div>
         </div>
     </div>
+
+    {{/if}}
 </div>
