@@ -8,8 +8,10 @@
                 <span aria-hidden="true">&times;</span>
             </a>
         </div>
+        <a class="btn btn-primary mx-3" href="/products">All products</a>
         {{/if}}
 
+        {{#if data}}
         <div class="row">
             <div class="col-lg-6 mx-auto bg-white p-3 shadow">
                 <form method="post" action="/create_product">
@@ -67,3 +69,5 @@
             minute: "numeric"
         });
     </script>
+
+    {{/if}}

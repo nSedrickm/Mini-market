@@ -29,6 +29,7 @@ exports.create = function (req, res) {
                 res.send(err);
             /*res.json({ error: false, message: "product added successfully!", data: products }); */
             res.render("create_product", {
+                data: false,
                 title: "Product Added",
                 message: "Product added successfully",
                 alert: true

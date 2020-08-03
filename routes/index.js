@@ -52,7 +52,10 @@ router.post('/create_product', productsController.create);
 
 // render create_product
 router.get('/create_product', function (req, res) {
-    res.render('create_product');
+    res.render('create_product', {
+        data: true,
+        title: "Create New Product"
+    });
 });
 
 // Retrieve a single product with id
