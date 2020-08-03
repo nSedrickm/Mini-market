@@ -28,7 +28,12 @@ exports.create = function (req, res) {
             if (err)
                 res.send(err);
             /*res.json({ error: false, message: "product added successfully!", data: products }); */
-            res.redirect("/products")
+            res.render("create_product", {
+                title: "Product Added",
+                message: "Product added successfully",
+                alert: true
+
+            });
         });
     }
 };
