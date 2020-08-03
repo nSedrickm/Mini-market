@@ -1,7 +1,19 @@
 <div class="content-wrapper">
     <div class="content">
+        {{#if alert}}
+        <div class="alert alert-success alert-dismissible fade show m-3 shadow" role="alert">
+            {{message}}
+            <a type="button" href="/products" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+        </div>
+
+        <a class="btn btn-primary mx-3" href="/products">All products</a>
+        {{/if}}
+
+        {{#if data }}
         <div class="row">
-            <div class="col-lg-6 mx-auto">
+            <div class="col-lg-6 mx-auto bg-white p-3 shadow">
                 <form name="edit_products_form" method="post" action="/update_product">
                     {{#each data}}
                     <div class="form-group">
@@ -61,3 +73,5 @@
             minute: "numeric"
         });
     </script>
+
+    {{/if}}

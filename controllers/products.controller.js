@@ -57,7 +57,13 @@ exports.update = function (req, res) {
     products.update(req.body, function (err, product) {
         if (err)
             res.send(err);
-        res.json({ error: false, message: 'product successfully updated' });
+        //res.json({ error: false, message: 'product successfully updated' });
+        res.render("edit_product", {
+            data: false,
+            title: "Product Updated",
+            message: "Product updated successfully",
+            alert: true
+        });
     });
 };
 
