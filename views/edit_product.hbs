@@ -2,38 +2,45 @@
     <div class="content">
         <div class="row">
             <div class="col-lg-6 mx-auto">
-                <form method="post" action="/create_product">
+                <form name="edit_products_form" method="post" action="/update_product">
                     {{#each data}}
-                    <input type="hidden" value="{{id}}" id="id" name="id">
+                    <div class="form-group">
+                        <label for="id">ID</label>
+                        <input type="text" class="form-control" value="{{id}}" id="id" name="id" readonly>
+                    </div>
 
                     <div class="form-group">
                         <label for="name">PRODUCT NAME</label>
                         <input type="text" class="form-control" id="name" aria-describedby="name"
-                            placeholder="product name" value="{{name}}">
+                            placeholder="product name" value="{{name}}" name="name">
                     </div>
                     <div class="form-group">
                         <label for="category">CATEGORY</label>
                         <input type="text" class="form-control" id="category" placeholder="category"
-                            value="{{category}}">
+                            value="{{category}}" name="category">
                     </div>
                     <div class="form-group">
                         <label for="price">UNIT PRICE</label>
-                        <input type="number" class="form-control" id="price" placeholder="price" value="{{price}}">
+                        <input type="number" class="form-control" id="price" placeholder="price" value="{{price}}"
+                            name="price">
                     </div>
                     <div class="form-group">
                         <label for="quantity">QUANTITY</label>
                         <input type="number" class="form-control" id="quantity" placeholder="quantity"
-                            value="{{quantity}}">
+                            value="{{quantity}}" name="quantity">
                     </div>
                     <div class="form-group">
                         <label for="supplier">SUPPLIER</label>
                         <input type="text" class="form-control" id="supplier" placeholder="supplier"
-                            value="{{supplier}}">
+                            value="{{supplier}}" name="supplier">
                     </div>
                     <div class="form-group">
-                        <label for="created">Created</label>
-                        <input type="date" class="form-control" id="created" placeholder="created"
-                            value="{{created_at}}">
+                        <label for="date">Created</label>
+                        <input type="date" class="form-control" id="date" placeholder="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" class="form-control" id="time" placeholder="time" name="time">
                     </div>
 
                     {{/each}}
@@ -43,3 +50,14 @@
             </div>
         </div>
     </div>
+    <script>
+        var today = new Date();
+        var date = document.getElementById("date");
+        date.valueAsDate = today;
+
+        var time = document.getElementById("time");
+        time.value = today.toLocaleTimeString('en-GB', {
+            hour: "numeric",
+            minute: "numeric"
+        });
+    </script>

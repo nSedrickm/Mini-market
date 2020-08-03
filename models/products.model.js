@@ -7,7 +7,11 @@ var products = function (product) {
     this.price = product.price;
     this.quantity = product.quantity;
     this.supplier = product.supplier;
-    this.created_at = new Date();
+    this.date = new Date().toISOString().substr(0, 10);
+    this.time = new Date().toLocaleTimeString('en-GB', {
+        hour: "numeric",
+        minute: "numeric"
+    });
 };
 
 products.getAll = result => {
@@ -56,10 +60,11 @@ products.findById = function (id, result) {
     });
 };
 
-products.update = function (id, product, result) {
+products.update = function (product, result) {
+    console.log("logging product")
+    console.log(product)
 
-    console.log(product);
-    mysqlConn.query("UPDATE products SET name= ? WHERE id = ?", [product.name, id], function (err, res) {
+    mysqlConn.query("UPDATE products SET name=?,category=?,price=?,quantity=?,supplier=?,date=?,time=? WHERE id=?", [product.name, product.category, product.price, product.quantity, product.supplier, product.date, product.time, product.id], function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(null, err);

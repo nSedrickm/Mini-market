@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
+const mysqlConn = require('../config/db.config');
+
 
 const productsController = require("../controllers/products.controller");
-const mysqlConn = require('../config/db.config');
 
 
 /******** *********
@@ -58,7 +59,7 @@ router.get('/create_product', function (req, res) {
 router.post('/findId', productsController.findById);
 
 // Update a product with id
-router.post('/update', productsController.update);
+router.post('/update_product', productsController.update);
 
 // Delete a product with id
 router.delete('/delete/:id', productsController.delete);

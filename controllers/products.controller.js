@@ -48,7 +48,6 @@ exports.findById = function (req, res) {
 
 
 exports.update = function (req, res) {
-    console.log(req.body);
     products.update(req.body, function (err, product) {
         if (err)
             res.send(err);
