@@ -7,11 +7,8 @@ var products = function (product) {
     this.price = product.price;
     this.quantity = product.quantity;
     this.supplier = product.supplier;
-    this.date = new Date().toISOString().substr(0, 10);
-    this.time = new Date().toLocaleTimeString('en-GB', {
-        hour: "numeric",
-        minute: "numeric"
-    });
+    this.date = product.date;
+    this.time = product.time;
 };
 
 products.getAll = result => {

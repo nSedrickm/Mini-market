@@ -27,9 +27,13 @@
                         <label for="supplier">SUPPLIER</label>
                         <input type="text" class="form-control" id="supplier" name="supplier" placeholder="supplier">
                     </div>
-                    <div class="form-group d-none">
-                        <label for="created_at">Created</label>
-                        <input type="date" class="form-control" id="created_at" name="created_at" placeholder="created">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" class="form-control" id="date" placeholder="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" class="form-control" id="time" placeholder="time" name="time">
                     </div>
 
                     <button type="submit" class="ladda-button btn btn-primary btn-square btn-ladda w-100"
@@ -41,3 +45,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var today = new Date();
+        var date = document.getElementById("date");
+        date.valueAsDate = today;
+
+        var time = document.getElementById("time");
+        time.value = today.toLocaleTimeString('en-GB', {
+            hour: "numeric",
+            minute: "numeric"
+        });
+    </script>

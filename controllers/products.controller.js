@@ -17,6 +17,7 @@ exports.findAll = (req, res) => {
 
 
 exports.create = function (req, res) {
+    console.log(req.body);
     const new_product = new products(req.body);
 
     //handles null error

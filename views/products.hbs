@@ -19,7 +19,8 @@
                             <th>PRICE/FRS</th>
                             <th>QUANTITY</th>
                             <th>SUPPLIER</th>
-                            <th>CREATED</th>
+                            <th>DATE</th>
+                            <th>TIME</th>
                             <th>UPDATE</th>
 
                         </tr>
@@ -33,7 +34,8 @@
                             <td>{{price}}</td>
                             <td>{{quantity}}</td>
                             <td>{{supplier}}</td>
-                            <td>{{created_at}}</td>
+                            <td>{{date}}</td>
+                            <td>{{time}}</td>
                             <td>
                                 <form class="form" method="post" action="/findId">
                                     <input type="hidden" name="id" value="{{id}}"><button
