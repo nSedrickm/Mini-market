@@ -6,6 +6,8 @@ const mysqlConn = require('../config/db.config');
 const productsController = require("../controllers/products.controller");
 const ordersController = require("../controllers/orders.controller");
 const homeController = require("../controllers/home.controller");
+const loginController = require("../controllers/login.controller");
+
 
 
 
@@ -21,9 +23,7 @@ router.get('/', function (req, res) {
     });
 });
 
-router.post("/login", function (req, res) {
-    //login processing goes here
-});
+router.post("/login", loginController.login);
 
 router.get('/register', function (req, res) {
     res.render('register', {
