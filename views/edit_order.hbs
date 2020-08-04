@@ -1,0 +1,78 @@
+<div class="content-wrapper">
+    <div class="content">
+        {{#if alert}}
+        <div class="alert alert-success alert-dismissible fade show m-3 shadow" role="alert">
+            {{message}}
+            <a type="button" href="/orders" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+        </div>
+
+        <a class="btn btn-primary mx-3" href="/orders">All orders</a>
+        {{/if}}
+
+        {{#if data }}
+        {{#each data}}
+        <h2 class="text-center mb-2">Update Order for {{name}}</h2>
+
+        <div class="col-lg-6 mx-auto bg-white p-3 shadow">
+            <form name="edit_orders_form" method="post" action="/update_order">
+
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" value="{{id}}" id="id" name="id" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">PRODUCT NAME</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="product name"
+                        value="{{name}}" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="category">CATEGORY</label>
+                    <input type="text" class="form-control" id="category" placeholder="category" value="{{category}}"
+                        name="category">
+                </div>
+                <div class="form-group">
+                    <label for="price">UNIT PRICE</label>
+                    <input type="number" class="form-control" id="price" placeholder="price" value="{{price}}"
+                        name="price">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">QUANTITY</label>
+                    <input type="number" class="form-control" id="quantity" placeholder="quantity" value="{{quantity}}"
+                        name="quantity">
+                </div>
+                <div class="form-group">
+                    <label for="total">TOTAL</label>
+                    <input type="text" class="form-control" id="total" placeholder="total" value="{{total}}"
+                        name="total">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control" id="date" placeholder="date" name="date">
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" class="form-control" id="time" placeholder="time" name="time">
+                </div>
+
+                {{/each}}
+
+                <button type="submit" class="btn btn-primary d-block w-100">Update</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        var today = new Date();
+        var date = document.getElementById("date");
+        date.valueAsDate = today;
+
+        var time = document.getElementById("time");
+        time.value = today.toLocaleTimeString('en-GB', {
+            hour: "numeric",
+            minute: "numeric"
+        });
+    </script>
+
+    {{/if}}

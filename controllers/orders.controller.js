@@ -46,8 +46,8 @@ exports.findById = function (req, res) {
         if (err) {
             res.send(err);
         }
-        res.render('edit_product', {
-            title: 'Mini Market',
+        res.render('edit_order', {
+            title: 'Find Order',
             data: results
         });
     });
@@ -59,10 +59,10 @@ exports.update = function (req, res) {
         if (err)
             res.send(err);
         //res.json({ error: false, message: 'product successfully updated' });
-        res.render("edit_product", {
+        res.render("edit_order", {
             data: false,
-            title: "Product Updated",
-            message: "Product updated successfully",
+            title: "Order Updated",
+            message: "Order updated successfully",
             alert: true
         });
     });

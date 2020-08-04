@@ -47,10 +47,7 @@ orders.findById = function (id, result) {
 };
 
 orders.update = function (product, result) {
-    console.log("logging product")
-    console.log(product)
-
-    mysqlConn.query("UPDATE orders SET name=?,category=?,price=?,quantity=?,supplier=?,date=?,time=? WHERE id=?", [product.name, product.category, product.price, product.quantity, product.supplier, product.date, product.time, product.id], function (err, res) {
+    mysqlConn.query("UPDATE orders SET name=?,category=?,price=?,quantity=?,total=?,date=?,time=? WHERE id=?", [product.name, product.category, product.price, product.quantity, product.total, product.date, product.time, product.id], function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(null, err);
