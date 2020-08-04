@@ -27,11 +27,11 @@ exports.create = function (req, res) {
         orders.create(newOrder, function (err, orders) {
             if (err)
                 res.send(err);
-            /*res.json({ error: false, message: "product added successfully!", data: orders }); */
-            res.render("create_product", {
+            /*res.json({ error: false, message: "order added successfully!", data: orders }); */
+            res.render("create_order", {
                 data: false,
-                title: "Product Added",
-                message: "Product added successfully",
+                title: "Order Added",
+                message: "Order added successfully",
                 alert: true
 
             });
