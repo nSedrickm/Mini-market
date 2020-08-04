@@ -4,6 +4,7 @@ const mysqlConn = require('../config/db.config');
 
 
 const productsController = require("../controllers/products.controller");
+const ordersController = require("../controllers/orders.controller");
 
 
 /******** *********
@@ -73,13 +74,24 @@ router.post('/delete_product', productsController.delete);
  *
  * ********* **********/
 
-router.get('/orders', function (req, res) {
-    res.render('orders');
-});
+router.get('/orders', ordersController.findAll);
 
 router.get('/create_order', function (req, res) {
-    res.render('create_order');
+    res.render('create_order', {
+        data: true,
+        title: "Create New Order"
+    });
 });
+// Create a new order
+router.post('/create_order', ordersController.create);
+// Retrieve a single order with id
+router.post('/findOId', ordersController.findById);
+
+// Update a order with id
+router.post('/update_order', ordersController.update);
+
+// Delete a order with id
+router.post('/delete_order', ordersController.delete);
 
 
 
