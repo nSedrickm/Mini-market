@@ -11,63 +11,62 @@
         <a class="btn btn-primary mx-3" href="/products">All products</a>
         {{/if}}
 
-        {{#if data}}
-        <div class="row">
-            <div class="col-lg-6 mx-auto bg-white p-3 shadow">
-                <form method="post" action="/create_product">
+        {{#if data}}<h2 class="text-center mb-2">New Product</h2>
+        <div class="col-lg-6 mx-auto bg-white p-3 shadow">
+            <form method="post" action="/create_product">
 
-                    <input type="hidden" id="id" name="id">
+                <input type="hidden" id="id" name="id">
 
-                    <div class="form-group">
-                        <label for="name">PRODUCT NAME</label>
-                        <input type="text" class="form-control" id="name" name="name" aria-describedby="name"
-                            placeholder="product name">
-                    </div>
-                    <div class="form-group">
-                        <label for="category">CATEGORY</label>
-                        <input type="text" class="form-control" id="category" name="category" placeholder="category">
-                    </div>
-                    <div class="form-group">
-                        <label for="price">UNIT PRICE</label>
-                        <input type="number" class="form-control" id="price" name="price" placeholder="price">
-                    </div>
-                    <div class="form-group">
-                        <label for="quantity">QUANTITY</label>
-                        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity">
-                    </div>
-                    <div class="form-group">
-                        <label for="supplier">SUPPLIER</label>
-                        <input type="text" class="form-control" id="supplier" name="supplier" placeholder="supplier">
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Date</label>
-                        <input type="date" class="form-control" id="date" placeholder="date" name="date">
-                    </div>
-                    <div class="form-group">
-                        <label for="time">Time</label>
-                        <input type="time" class="form-control" id="time" placeholder="time" name="time">
-                    </div>
+                <div class="form-group">
+                    <label for="name">PRODUCT NAME</label>
+                    <input type="text" class="form-control" id="name" name="name" aria-describedby="name"
+                        placeholder="product name">
+                </div>
+                <div class="form-group">
+                    <label for="category">CATEGORY</label>
+                    <input type="text" class="form-control" id="category" name="category" placeholder="category">
+                </div>
+                <div class="form-group">
+                    <label for="price">UNIT PRICE</label>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="price">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">QUANTITY</label>
+                    <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity">
+                </div>
+                <div class="form-group">
+                    <label for="supplier">SUPPLIER</label>
+                    <input type="text" class="form-control" id="supplier" name="supplier" placeholder="supplier">
+                </div>
+                <div class="form-group">
+                    <label for="date">DATE</label>
+                    <input type="date" class="form-control" id="date" placeholder="date" name="date">
+                </div>
+                <div class="form-group">
+                    <label for="time">TIME</label>
+                    <input type="time" class="form-control" id="time" placeholder="time" name="time">
+                </div>
 
-                    <button type="submit" class="ladda-button btn btn-primary btn-square btn-ladda w-100"
-                        data-style="expand-left">
-                        <span class="ladda-label">Create</span>
-                        <span class="ladda-spinner"></span>
-                    </button>
-                </form>
-            </div>
+                <button type="submit" class="ladda-button btn btn-primary btn-square btn-ladda w-100"
+                    data-style="expand-left">
+                    <span class="ladda-label">Create</span>
+                    <span class="ladda-spinner"></span>
+                </button>
+            </form>
         </div>
     </div>
+</div>
 
-    <script>
-        var today = new Date();
-        var date = document.getElementById("date");
-        date.valueAsDate = today;
+<script>
+    var today = new Date();
+    var date = document.getElementById("date");
+    date.valueAsDate = today;
 
-        var time = document.getElementById("time");
-        time.value = today.toLocaleTimeString('en-GB', {
-            hour: "numeric",
-            minute: "numeric"
-        });
-    </script>
+    var time = document.getElementById("time");
+    time.value = today.toLocaleTimeString('en-GB', {
+        hour: "numeric",
+        minute: "numeric"
+    });
+</script>
 
-    {{/if}}
+{{/if}}

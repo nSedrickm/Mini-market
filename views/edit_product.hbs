@@ -12,54 +12,55 @@
         {{/if}}
 
         {{#if data }}
-        <div class="row">
-            <div class="col-lg-6 mx-auto bg-white p-3 shadow">
-                <form name="edit_products_form" method="post" action="/update_product">
-                    {{#each data}}
-                    <div class="form-group">
-                        <label for="id">ID</label>
-                        <input type="text" class="form-control" value="{{id}}" id="id" name="id" readonly>
-                    </div>
+        {{#each data}}
+        <h2 class="text-center mb-2">Update product {{name}}</h2>
 
-                    <div class="form-group">
-                        <label for="name">PRODUCT NAME</label>
-                        <input type="text" class="form-control" id="name" aria-describedby="name"
-                            placeholder="product name" value="{{name}}" name="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="category">CATEGORY</label>
-                        <input type="text" class="form-control" id="category" placeholder="category"
-                            value="{{category}}" name="category">
-                    </div>
-                    <div class="form-group">
-                        <label for="price">UNIT PRICE</label>
-                        <input type="number" class="form-control" id="price" placeholder="price" value="{{price}}"
-                            name="price">
-                    </div>
-                    <div class="form-group">
-                        <label for="quantity">QUANTITY</label>
-                        <input type="number" class="form-control" id="quantity" placeholder="quantity"
-                            value="{{quantity}}" name="quantity">
-                    </div>
-                    <div class="form-group">
-                        <label for="supplier">SUPPLIER</label>
-                        <input type="text" class="form-control" id="supplier" placeholder="supplier"
-                            value="{{supplier}}" name="supplier">
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Date</label>
-                        <input type="date" class="form-control" id="date" placeholder="date" name="date">
-                    </div>
-                    <div class="form-group">
-                        <label for="time">Time</label>
-                        <input type="time" class="form-control" id="time" placeholder="time" name="time">
-                    </div>
+        <div class="col-lg-6 mx-auto bg-white p-3 shadow">
+            <form name="edit_products_form" method="post" action="/update_product">
 
-                    {{/each}}
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" value="{{id}}" id="id" name="id" readonly>
+                </div>
 
-                    <button type="submit" class="btn btn-primary d-block w-100">Update</button>
-                </form>
-            </div>
+                <div class="form-group">
+                    <label for="name">PRODUCT NAME</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="product name"
+                        value="{{name}}" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="category">CATEGORY</label>
+                    <input type="text" class="form-control" id="category" placeholder="category" value="{{category}}"
+                        name="category">
+                </div>
+                <div class="form-group">
+                    <label for="price">UNIT PRICE</label>
+                    <input type="number" class="form-control" id="price" placeholder="price" value="{{price}}"
+                        name="price">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">QUANTITY</label>
+                    <input type="number" class="form-control" id="quantity" placeholder="quantity" value="{{quantity}}"
+                        name="quantity">
+                </div>
+                <div class="form-group">
+                    <label for="supplier">SUPPLIER</label>
+                    <input type="text" class="form-control" id="supplier" placeholder="supplier" value="{{supplier}}"
+                        name="supplier">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" class="form-control" id="date" placeholder="date" name="date">
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" class="form-control" id="time" placeholder="time" name="time">
+                </div>
+
+                {{/each}}
+
+                <button type="submit" class="btn btn-primary d-block w-100">Update</button>
+            </form>
         </div>
     </div>
     <script>
