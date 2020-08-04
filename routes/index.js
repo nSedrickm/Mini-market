@@ -5,6 +5,8 @@ const mysqlConn = require('../config/db.config');
 
 const productsController = require("../controllers/products.controller");
 const ordersController = require("../controllers/orders.controller");
+const homeController = require("../controllers/home.controller");
+
 
 
 /******** *********
@@ -33,11 +35,6 @@ router.get('/register', function (req, res) {
 router.post('/register', function (req, res) {
     // registration process gotes here
 });
-
-router.get('/home', function (req, res) {
-    res.render('home');
-});
-
 
 /******** *********
  * products block
@@ -103,5 +100,13 @@ router.post('/delete_order', ordersController.delete);
 router.get('/reports', function (req, res) {
     res.render('reports');
 });
+
+/******** *********
+ * home block
+ *
+ * ********* **********/
+
+
+router.get('/home', homeController.getMetrics);
 
 module.exports = router;
