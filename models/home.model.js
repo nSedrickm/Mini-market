@@ -2,13 +2,17 @@ var mysqlConn = require('../config/db.config');
 
 
 getMetrics = function (result) {
-    mysqlConn.query("SELECT COUNT(*) number FROM products ", function (err, product_count) {
+    const sql = `SELECT (SELECT count(*) from products) AS products,
+    (SELECT count(*) from orders)  AS orders`;
+
+    mysqlConn.query(sql, function (err, data) {
         if (err) {
             console.log("error: ", err);
             result(null, err);
         }
         else {
-            result(null, product_count);
+            console.log(data);
+            result(null, data);
         }
     });
 };

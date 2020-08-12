@@ -2,11 +2,11 @@
     <!-- Top Statistics -->
 
     <div class="row">
-        {{#each products}}
-        <div class="col-xl-3 col-sm-6">
+        {{#each data}}
+        <div class="col-xl-4 col-sm-6">
             <div class="card card-mini mb-4">
                 <div class="card-body">
-                    <h2 class="mb-1">{{number}}</h2>
+                    <h2 class="mb-1">{{products}}</h2>
                     <p>products</p>
                     <div class="chartjs-wrapper">
                         <canvas id="barChart"></canvas>
@@ -14,31 +14,21 @@
                 </div>
             </div>
         </div>
-        {{/each}}
 
-        <div class="col-xl-3 col-sm-6">
-            <div class="card card-mini  mb-4">
-                <div class="card-body">
-                    <h2 class="mb-1">15</h2>
-                    <p>Categories</p>
-                    <div class="chartjs-wrapper">
-                        <canvas id="dual-line"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-sm-6">
+        <div class="col-xl-4 col-sm-6">
             <div class="card card-mini mb-4">
                 <div class="card-body">
-                    <h2 class="mb-1">24</h2>
-                    <p>sales total </p>
+                    <h2 class="mb-1">{{orders}}</h2>
+                    <p>orders </p>
                     <div class="chartjs-wrapper">
                         <canvas id="area-chart"></canvas>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6">
+        {{/each}}
+
+        <div class="col-xl-4 col-sm-6">
             <div class="card card-mini mb-4">
                 <div class="card-body">
                     <h2 class="mb-1">Top Milk </h2>
