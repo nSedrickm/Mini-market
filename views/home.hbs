@@ -26,12 +26,12 @@
                 </div>
             </div>
         </div>
-        {{/each}}
+
 
         <div class="col-xl-4 col-sm-6">
             <div class="card card-mini mb-4">
                 <div class="card-body">
-                    <h2 class="mb-1">Top Milk </h2>
+                    <h2 class="mb-1">{{ best_seller}}</h2>
                     <p>Best Selling</p>
                     <div class="chartjs-wrapper">
                         <canvas id="line"></canvas>
@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-
+    {{/each}}
 
     <div class="row">
         <div class="col-xl-8 col-md-12">
