@@ -14,9 +14,8 @@
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500"
         rel="stylesheet" />
-    <link href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css" rel="stylesheet" />
-
-
+    <link href="/assets/icons/MDI4/css/materialdesignicons.min.css" rel="stylesheet" media="print"
+        onload="this.media='all'" />
     <!-- PLUGINS CSS STYLE -->
     <link href="/assets/plugins/nprogress/nprogress.css" rel="stylesheet" />
 
@@ -40,6 +39,8 @@
 
     <!-- SLEEK CSS -->
     <link id="sleek-css" rel="stylesheet" href="/assets/css/sleek.css" />
+
+    <link rel="stylesheet" href="/assets/css/custom.css" />
 
     <!-- FAVICON -->
     <link href="/assets/img/favicon.png" rel="shortcut icon" />
@@ -77,7 +78,8 @@
                 </div>
                 <div class="card-body p-5">
 
-                    <form id="login_form" method="post" action="/login">
+                    <!-- process form with ajax to let us handle failed authentication -->
+                    <form id="login_form">
                         <div class="row">
                             <div class="form-group col-md-12 mb-4">
                                 <input type="text" class="form-control input-lg" id="username" name="username"
@@ -101,12 +103,45 @@
             </div>
         </div>
     </div>
-    <div class="copyright pl-0">
-        <p class="text-center">&copy; 2018 Copyright Sleek Dashboard Bootstrap Template by
-            <a class="text-primary" href="http://www.iamabdus.com/" target="_blank">Abdus</a>.
-        </p>
+
+    <!-- error Modal -->
+    <div class="modal fade" id="info_modal" tabindex="-1" role="dialog" aria-labelledby="info_modal" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="info_modal">Login alert</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="message"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- spinner -->
+    <div class="modal" id="loading_modal" tabindex="-1" role="dialog" aria-labelledby="loading_modalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content transparent">
+                <div class="spinner-border mx-auto text-white" style="width:5rem; height:5rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+
+                <h3 class="text-center text-white my-5" id="loading_message"> Verifying details. Please be patient</h3>
+            </div>
+        </div>
+    </div>
+
 </div>
+<script src="/assets/plugins/jquery/jquery.min.js"></script>
+<script src="/assets/js/sleek.bundle.min.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 
 </html>

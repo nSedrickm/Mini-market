@@ -1,14 +1,21 @@
 const login = require("../models/login.model");
 
 exports.login = function (req, res) {
-    login(req.body, function (err, results) {
-        console.log(results)
+    let user = req.body;
+    console.log("loggin user:", user);
+    login(user, function (err, results) {
+
         if (err) {
-            res.send(err);
+            res.status(403).send('error');
         }
 
+        if (results == "") {
+            res.status(403).send('failed');
+            console.log(results)
+        }
         else {
-            res.redirect('/home');
+            res.status(200).send('success');
+            console.log(results)
         }
     });
 };
