@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content bg-white">
     {{#if alert}}
     <div class="alert alert-danger alert-dismissible fade show m-3 shadow" role="alert">
         {{message}}
@@ -10,62 +10,55 @@
     {{/if}}
 
     {{#if data}}
-    <div class="card">
-        <div class="card-header bg-white card-header-border-bottom d-flex justify-content-between">
-            <h1>Products</h1>
+    <div class="d-flex justify-content-between mb-4">
+        <h1>Products</h1>
 
-            <a href="/create_product" class="btn btn-primary">
-                <i class=" mdi mdi-link mr-1"></i> Add Product
-            </a>
-        </div>
-
-        <div class="card-body">
-            <div class="basic-data-table">
-                <table id="basic-data-table" class="table nowrap">
-                    <thead>
-                        <tr>
-                            <th>NAME</th>
-                            <th>CATEGORY</th>
-                            <th>PRICE/FRS</th>
-                            <th>QUANTITY</th>
-                            <th>SUPPLIER</th>
-                            <th>DATE</th>
-                            <th>TIME</th>
-                            <th>UPDATE</th>
-                            <th>DELETE</th>
-
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {{#each data}}
-                        <tr>
-                            <td>{{name}}</td>
-                            <td>{{category}}</td>
-                            <td>{{price}}</td>
-                            <td>{{quantity}}</td>
-                            <td>{{supplier}}</td>
-                            <td>{{date}}</td>
-                            <td>{{time}}</td>
-                            <td>
-                                <form class="form" method="post" action="/findId">
-                                    <input type="hidden" name="id" value="{{id}}"><button
-                                        class="btn btn-info">edit</button>
-                                </form>
-                            </td>
-                            <td>
-                                <form class="form" method="post" action="/delete_product">
-                                    <input type="hidden" name="id" value="{{id}}"><button
-                                        class="btn btn-danger">delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <a href="/create_product" class="btn btn-primary">
+            Add product
+        </a>
     </div>
+
+    <table id="basic-data-table" class="table nowrap">
+        <thead class="thead thead-light">
+            <tr>
+                <th>NAME</th>
+                <th>CATEGORY</th>
+                <th>PRICE/FRS</th>
+                <th>QUANTITY</th>
+                <th>SUPPLIER</th>
+                <th>DATE</th>
+                <th>TIME</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{category}}</td>
+                <td>{{price}}</td>
+                <td>{{quantity}}</td>
+                <td>{{supplier}}</td>
+                <td>{{date}}</td>
+                <td>{{time}}</td>
+                <td>
+                    <form class="form" method="post" action="/findId">
+                        <input type="hidden" name="id" value="{{id}}"><button
+                            class="btn btn-sm d-block w-100 btn-secondary">edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form class="form" method="post" action="/delete_product">
+                        <input type="hidden" name="id" value="{{id}}"><button
+                            class="btn btn-sm d-block w-100 btn-danger">delete</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 
     {{/if}}
 </div>
