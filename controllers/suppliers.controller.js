@@ -74,10 +74,10 @@ exports.delete = function (req, res) {
         if (err)
             res.send(err);
         //res.json({ error: false, message: 'product successfully deleted' });
-        res.render("orders", {
+        res.render("suppliers", {
             data: false,
-            title: "Product Deleted",
-            message: "Product deleted successfully",
+            title: "Supplier Deleted",
+            message: "Supplier deleted successfully",
             alert: true
         });
     });

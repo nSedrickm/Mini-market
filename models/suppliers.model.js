@@ -56,7 +56,7 @@ suppliers.update = function (supplier, result) {
 };
 
 suppliers.delete = function (id, result) {
-    mysqlConn.query("DELETE FROM orders WHERE id = ?", [id], function (err, res) {
+    mysqlConn.query("DELETE FROM suppliers WHERE id = ?", [id], function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(null, err);
