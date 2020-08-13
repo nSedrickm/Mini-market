@@ -1,212 +1,27 @@
 <div class="content">
-    <h2> Download Reports</h2>
+        <h2 class="mb-3"> Download Reports</h2>
 
-    <table id="example-report" class="display table" style="width:100%">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Extn.</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Extn.</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
-        </tfoot>
-    </table>
-    <table cellspacing="0" cellpadding="0" border="0">
-        <tbody>
-            <tr>
-                <td class="gutter">
-                    <div class="line number1 index0 alt2">1</div>
-                    <div class="line number2 index1 alt1">2</div>
-                    <div class="line number3 index2 alt2">3</div>
-                    <div class="line number4 index3 alt1">4</div>
-                    <div class="line number5 index4 alt2">5</div>
-                    <div class="line number6 index5 alt1">6</div>
-                    <div class="line number7 index6 alt2">7</div>
-                    <div class="line number8 index7 alt1">8</div>
-                    <div class="line number9 index8 alt2">9</div>
-                    <div class="line number10 index9 alt1">10</div>
-                    <div class="line number11 index10 alt2">11</div>
-                    <div class="line number12 index11 alt1">12</div>
-                    <div class="line number13 index12 alt2">13</div>
-                    <div class="line number14 index13 alt1">14</div>
-                    <div class="line number15 index14 alt2">15</div>
-                    <div class="line number16 index15 alt1">16</div>
-                    <div class="line number17 index16 alt2">17</div>
-                    <div class="line number18 index17 alt1">18</div>
-                    <div class="line number19 index18 alt2">19</div>
-                    <div class="line number20 index19 alt1">20</div>
-                    <div class="line number21 index20 alt2">21</div>
-                    <div class="line number22 index21 alt1">22</div>
-                    <div class="line number23 index22 alt2">23</div>
-                    <div class="line number24 index23 alt1">24</div>
-                    <div class="line number25 index24 alt2">25</div>
-                    <div class="line number26 index25 alt1">26</div>
-                    <div class="line number27 index26 alt2">27</div>
-                    <div class="line number28 index27 alt1">28</div>
-                    <div class="line number29 index28 alt2">29</div>
-                    <div class="line number30 index29 alt1">30</div>
-                    <div class="line number31 index30 alt2">31</div>
-                    <div class="line number32 index31 alt1">32</div>
-                    <div class="line number33 index32 alt2">33</div>
-                    <div class="line number34 index33 alt1">34</div>
-                    <div class="line number35 index34 alt2">35</div>
-                    <div class="line number36 index35 alt1">36</div>
-                    <div class="line number37 index36 alt2">37</div>
-                    <div class="line number38 index37 alt1">38</div>
-                </td>
-                <td class="code">
-                    <div class="container">
-                        <div class="line number1 index0 alt2"><code class="js plain">$(document).ready(</code><code
-                                class="js keyword">function</code><code class="js plain">() {</code></div>
-                        <div class="line number2 index1 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code>
-                            <code class="js plain">buttonCommon = {</code></div>
-                        <div class="line number3 index2 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">exportOptions: {</code></div>
-                        <div class="line number4 index3 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">format: {</code></div>
-                        <div class="line number5 index4 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">body: </code><code class="js keyword">function</code> <code
-                                class="js plain">( data, row, column, node ) {</code></div>
-                        <div class="line number6 index5 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js comments">// Strip $ from salary column to make it numeric</code></div>
-                        <div class="line number7 index6 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js keyword">return</code> <code class="js plain">column === 5 ?</code></div>
-                        <div class="line number8 index7 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">data.replace( /[$,]/g, </code><code class="js string">''</code> <code
-                                class="js plain">) :</code></div>
-                        <div class="line number9 index8 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">data;</code></div>
-                        <div class="line number10 index9 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">}</code></div>
-                        <div class="line number11 index10 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">}</code></div>
-                        <div class="line number12 index11 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">}</code></div>
-                        <div class="line number13 index12 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">};</code></div>
-                        <div class="line number14 index13 alt1">&nbsp;</div>
-                        <div class="line number15 index14 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">$(</code><code
-                                class="js string">'#example'</code><code class="js plain">).DataTable( {</code></div>
-                        <div class="line number16 index15 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">ajax: </code><code
-                                class="js string">'../../../../examples/ajax/data/objects.txt'</code><code
-                                class="js plain">,</code></div>
-                        <div class="line number17 index16 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">columns: [</code></div>
-                        <div class="line number18 index17 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">{ data: </code><code class="js string">'name'</code> <code
-                                class="js plain">},</code></div>
-                        <div class="line number19 index18 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">{ data: </code><code class="js string">'position'</code> <code
-                                class="js plain">},</code></div>
-                        <div class="line number20 index19 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">{ data: </code><code class="js string">'office'</code> <code
-                                class="js plain">},</code></div>
-                        <div class="line number21 index20 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">{ data: </code><code class="js string">'extn'</code> <code
-                                class="js plain">},</code></div>
-                        <div class="line number22 index21 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">{ data: </code><code class="js string">'start_date'</code> <code
-                                class="js plain">},</code></div>
-                        <div class="line number23 index22 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">{ data: </code><code class="js string">'salary'</code> <code
-                                class="js plain">}</code></div>
-                        <div class="line number24 index23 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">],</code></div>
-                        <div class="line number25 index24 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">dom: </code><code class="js string">'Bfrtip'</code><code
-                                class="js plain">,</code></div>
-                        <div class="line number26 index25 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">buttons: [</code></div>
-                        <div class="line number27 index26 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">$.extend( </code><code class="js keyword">true</code><code
-                                class="js plain">, {}, buttonCommon, {</code></div>
-                        <div class="line number28 index27 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">extend: </code><code class="js string">'copyHtml5'</code></div>
-                        <div class="line number29 index28 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">} ),</code></div>
-                        <div class="line number30 index29 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">$.extend( </code><code class="js keyword">true</code><code
-                                class="js plain">, {}, buttonCommon, {</code></div>
-                        <div class="line number31 index30 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">extend: </code><code class="js string">'excelHtml5'</code></div>
-                        <div class="line number32 index31 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">} ),</code></div>
-                        <div class="line number33 index32 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">$.extend( </code><code class="js keyword">true</code><code
-                                class="js plain">, {}, buttonCommon, {</code></div>
-                        <div class="line number34 index33 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">extend: </code><code class="js string">'pdfHtml5'</code></div>
-                        <div class="line number35 index34 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">} )</code></div>
-                        <div class="line number36 index35 alt1"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code
-                                class="js plain">]</code></div>
-                        <div class="line number37 index36 alt2"><code
-                                class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">} );</code>
-                        </div>
-                        <div class="line number38 index37 alt1"><code class="js plain">} );</code></div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table cellspacing="0" cellpadding="0" border="0">
-        <tbody>
-            <tr>
-                <td class="gutter">
-                    <div class="line number1 index0 alt2" style="display: none;">1</div>
-                </td>
-                <td class="code">
-                    <div class="container" style="display: none;">
-                        <div class="line number1 index0 alt2" style="display: none;">&nbsp;</div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+        <table id="example-report" class="display table table-bordered " style="width:100%">
+                <thead class="thead">
+                        <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Extn.</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                        </tr>
+                </thead>
+                <tfoot>
+                        <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Office</th>
+                                <th>Extn.</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                        </tr>
+                </tfoot>
+        </table>
+
 </div>

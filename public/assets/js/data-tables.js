@@ -18,6 +18,9 @@ $(document).ready(function () {
         }
     };
 
+
+    $("#example-report").append('<caption style="caption-side: bottom">Products Report</caption>');
+
     $('#example-report').DataTable({
         ajax: 'http://localhost:8001/objects.txt',
         columns: [
@@ -31,13 +34,29 @@ $(document).ready(function () {
         dom: 'Bfrtip',
         buttons: [
             $.extend(true, {}, buttonCommon, {
-                extend: 'copyHtml5'
+                extend: 'csvHtml5',
+                className: 'btn text-light shadow border-0 bg-secondary ',
+                title: 'Products Report',
+                messageTop: 'Generated : ' + new Date().toUTCString(),
             }),
             $.extend(true, {}, buttonCommon, {
-                extend: 'excelHtml5'
+                extend: 'excelHtml5',
+                className: 'btn text-light shadow border-0 bg-success',
+                title: 'Products Report',
+                messageTop: 'Generated : ' + new Date().toUTCString(),
             }),
             $.extend(true, {}, buttonCommon, {
-                extend: 'pdfHtml5'
+                extend: 'pdfHtml5',
+                className: 'btn text-light shadow border-0 bg-danger',
+                title: 'Products Report',
+                messageTop: 'Generated : ' + new Date().toUTCString(),
+            }),
+            $.extend(true, {}, buttonCommon, {
+                extend: 'print',
+                autoPrint: false,
+                className: 'btn text-light shadow border-0 bg-primary',
+                title: 'Products Report',
+                messageTop: 'Generated : ' + new Date().toUTCString(),
             })
         ]
     });
