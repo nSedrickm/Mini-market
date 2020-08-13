@@ -12,72 +12,83 @@ $(document).ready(function () {
                         data.replace(/[$,]/g, '') :
                         data;
                 }
+            },
+            modifier: {
+                page: 'current'
             }
         }
     };
 
     /* products report generation */
     $('#products-report-table').DataTable({
-        dom: 'Bfrtip',
+        dom: "<'row'<'col-md-3'l><'col-md-4'f><'col-md-5 text-md-right'B>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
         buttons: [
             $.extend(true, {}, buttonCommon, {
                 extend: 'csvHtml5',
-                className: 'btn text-light shadow border-0 bg-secondary ',
+                className: 'btn px-4 py-1 shadow btn-secondary ',
                 title: 'Products Report',
                 messageTop: 'Generated : ' + new Date().toUTCString(),
             }),
             $.extend(true, {}, buttonCommon, {
                 extend: 'excelHtml5',
-                className: 'btn text-light shadow border-0 bg-success',
+                className: 'btn px-4 py-1 shadow btn-success',
                 title: 'Products Report',
                 messageTop: 'Generated : ' + new Date().toUTCString(),
             }),
             $.extend(true, {}, buttonCommon, {
                 extend: 'pdfHtml5',
-                className: 'btn text-light shadow border-0 bg-danger',
+                className: 'btn px-4 py-1 shadow btn-danger',
                 title: 'Products Report',
                 messageTop: 'Generated : ' + new Date().toUTCString(),
             }),
             $.extend(true, {}, buttonCommon, {
                 extend: 'print',
-                autoPrint: false,
-                className: 'btn text-light shadow border-0 bg-primary',
+                className: 'btn px-4 py-1 shadow btn-primary',
                 title: 'Products Report',
                 messageTop: 'Generated : ' + new Date().toUTCString(),
             })
-        ]
+        ],
+        initComplete: function () {
+            $('.dataTables_filter input[type="search"]').css({ 'width': '350px', 'display': 'inline-block', 'float': 'none !important', 'padding': '1rem', 'margin': '0 auto !important' });
+        }
     });
 
     /* orders report generation */
     $('#orders-report-table').DataTable({
-        dom: 'Bfrtip',
+        dom: "<'row'<'col-md-3'l><'col-md-4'f><'col-md-5 text-md-right'B>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>",
         buttons: [
             $.extend(true, {}, buttonCommon, {
                 extend: 'csvHtml5',
-                className: 'btn text-light shadow border-0 bg-secondary ',
+                className: 'btn px-4 py-1 shadow btn-secondary ',
                 title: 'Orders Report',
                 messageTop: 'Generated : ' + new Date().toUTCString(),
             }),
             $.extend(true, {}, buttonCommon, {
                 extend: 'excelHtml5',
-                className: 'btn text-light shadow border-0 bg-success',
+                className: 'btn px-4 py-1 shadow btn-success',
                 title: 'Orders Report',
                 messageTop: 'Generated : ' + new Date().toUTCString(),
             }),
             $.extend(true, {}, buttonCommon, {
                 extend: 'pdfHtml5',
-                className: 'btn text-light shadow border-0 bg-danger',
+                className: 'btn px-4 py-1 shadow btn-danger',
                 title: 'Orders Report',
                 messageTop: 'Generated : ' + new Date().toUTCString(),
             }),
             $.extend(true, {}, buttonCommon, {
                 extend: 'print',
-                autoPrint: false,
-                className: 'btn text-light shadow border-0 bg-primary',
+                className: 'btn px-4 py-1 shadow btn-primary',
                 title: 'Orders Report',
                 messageTop: 'Generated : ' + new Date().toUTCString(),
             })
-        ]
+        ],
+        initComplete: function () {
+            $('.dataTables_filter input[type="search"]').css({ 'width': '350px', 'display': 'inline-block', 'float': 'none !important', 'padding': '1rem', 'margin': '0 auto !important' });
+        }
     });
 });
 
