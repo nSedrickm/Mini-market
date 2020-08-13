@@ -19,18 +19,7 @@ $(document).ready(function () {
     };
 
 
-    $("#example-report").append('<caption style="caption-side: bottom">Products Report</caption>');
-
-    $('#example-report').DataTable({
-        ajax: 'http://localhost:8001/objects.txt',
-        columns: [
-            { data: 'name' },
-            { data: 'position' },
-            { data: 'office' },
-            { data: 'extn' },
-            { data: 'start_date' },
-            { data: 'salary' }
-        ],
+    $('#products-report-table').DataTable({
         dom: 'Bfrtip',
         buttons: [
             $.extend(true, {}, buttonCommon, {

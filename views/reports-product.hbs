@@ -1,17 +1,32 @@
 <div class="content bg-white">
         <h2 class="mb-3 font-weight-bold text-center"> Product Report</h2>
 
-        <table id="example-report" class="display table table-bordered " style="width:100%">
-                <thead class="thead">
+        <table id="products-report-table" class="display table table-bordered " style="width:100%">
+                <thead class="thead thead-light">
                         <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Extn.</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>NAME</th>
+                                <th>CATEGORY</th>
+                                <th>PRICE/FRS</th>
+                                <th>QUANTITY</th>
+                                <th>SUPPLIER</th>
+                                <th>DATE</th>
+                                <th>TIME</th>
+
                         </tr>
                 </thead>
+                <tbody>
+                        {{#each data}}
+                        <tr>
+                                <td>{{name}}</td>
+                                <td>{{category}}</td>
+                                <td>{{price}}</td>
+                                <td>{{quantity}}</td>
+                                <td>{{supplier}}</td>
+                                <td>{{date}}</td>
+                                <td>{{time}}</td>
+                        </tr>
+                        {{/each}}
+                </tbody>
         </table>
 
 </div>
