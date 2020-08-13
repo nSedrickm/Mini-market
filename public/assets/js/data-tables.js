@@ -1,5 +1,5 @@
 
-//start all data tables 
+//start all data tables
 $(document).ready(function () {
     $('#basic-data-table').DataTable();
 
