@@ -2,16 +2,12 @@ var express = require('express');
 var router = express.Router();
 const mysqlConn = require('../config/db.config');
 
-
 const productsController = require("../controllers/products.controller");
 const ordersController = require("../controllers/orders.controller");
 const homeController = require("../controllers/home.controller");
 const loginController = require("../controllers/login.controller");
 const reportsController = require("../controllers/reports.controller");
-
-
-
-
+const suppliersController = require("../controllers/suppliers.controller");
 
 /******** *********
  * login and registration block
@@ -112,7 +108,31 @@ router.get('/reports-orders', reportsController.getOrders);
  *
  * ********* **********/
 
-
 router.get('/home', homeController.getMetrics);
+
+
+/******** *********
+ * suppliers block
+ *
+ * ********* **********/
+
+router.get('/suppliers', suppliersController.findAll);
+
+router.get('/create_supplier', function (req, res) {
+    res.render('create_supplier', {
+        data: true,
+        title: "Create New supplier"
+    });
+});
+// Create a new supplier
+router.post('/create_supplier', suppliersController.create);
+// Retrieve a single supplier with id
+router.post('/findSId', suppliersController.findById);
+
+// Update a supplier with id
+router.post('/update_supplier', suppliersController.update);
+
+// Delete a supplier with id
+router.post('/delete_supplier', suppliersController.delete);
 
 module.exports = router;

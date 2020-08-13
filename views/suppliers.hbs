@@ -1,72 +1,60 @@
-<div class="content">
-
-    <div class="row">
-        <div class="col-12">
-            <div class="card card-default">
-                <div class="card-header card-header-border-bottom d-flex justify-content-between">
-                    <h2>Suppliers</h2>
-
-                    <a href="https://datatables.net/examples/styling/display.html" target="_blank"
-                        class="btn btn-outline-primary btn-sm text-uppercase">
-                        <i class=" mdi mdi-link mr-1"></i> New order
-                    </a>
-                </div>
-
-                <div class="card-body">
-                    <div class="basic-data-table">
-                        <table id="basic-data-table" class="table nowrap" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>SUPPLIER NAME</th>
-                                    <th>PHONENUMBER</th>
-                                    <th>PRODUCT NAME</th>
-                                    <th>CATEGORY</th>
-                                    <th>QUANTITY</th>
-                                    <th>UNIT PRICE</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>NOSUCA</td>
-                                    <td>237156845752</td>
-                                    <td>Dolait</td>
-                                    <td>groceries</td>
-                                    <td>150</td>
-                                    <td>2000</td>
-                                </tr>
-
-                                <tr>
-                                    <td>CAM GAZ</td>
-                                    <td>237156845752</td>
-                                    <td>Dolait</td>
-                                    <td>groceries</td>
-                                    <td>150</td>
-                                    <td>2000</td>
-                                </tr>
-                                <tr>
-                                    <td>NEIMA RIZ</td>
-                                    <td>237156845752</td>
-                                    <td>Dolait</td>
-                                    <td>groceries</td>
-                                    <td>150</td>
-                                    <td>2000</td>
-                                </tr>
-                                <tr>
-                                    <td>MAGGI</td>
-                                    <td>237156845752</td>
-                                    <td>Dolait</td>
-                                    <td>groceries</td>
-                                    <td>150</td>
-                                    <td>2000</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+<div class="content bg-white">
+    {{#if alert}}
+    <div class="alert alert-danger alert-dismissible fade show m-3 shadow" role="alert">
+        {{message}}
+        <a type="button" href="/suppliers" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </a>
     </div>
+    <a class="btn btn-primary mx-3" href="/suppliers">All Suppliers</a>
+    {{/if}}
+
+    {{#if data}}
+    <div class="d-flex justify-content-between mb-4">
+        <h1>Suppliers</h1>
+
+        <a href="/create_order" class="btn btn-primary">
+            Add Supplier
+        </a>
+    </div>
+
+    <table id="basic-data-table" class="table nowrap">
+        <thead class="thead thead-light">
+            <tr>
+                <th>NAME</th>
+                <th>PHONE NUMBER</th>
+                <th>PRODUCT NAME</th>
+                <th>CATEGORY</th>
+                <th>PRICE</th>
+                <th>UPDATE</th>
+                <th>DELETE</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{phone_number}}</td>
+                <td>{{product_name}}</td>
+                <td>{{category}}</td>
+                <td>{{price}}</td>
+                <td>
+                    <form class="form" method="post" action="/findSId">
+                        <input type="hidden" name="id" value="{{id}}"><button
+                            class="btn btn-sm d-block w-100 btn-secondary">edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form class="form" method="post" action="/delete_supplier">
+                        <input type="hidden" name="id" value="{{id}}"><button
+                            class="btn btn-sm d-block w-100 btn-danger">delete</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{/if}}
 </div>

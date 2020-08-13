@@ -1,0 +1,84 @@
+const suppliers = require("../models/suppliers.model");
+
+//get all orders from db
+exports.findAll = (req, res) => {
+    suppliers.findAll((err, results) => {
+        if (err) {
+            res.status(500).send({
+                message: err.message || "error occured while retrieving suppliers"
+            });
+        }
+        res.render('suppliers', {
+            title: 'All Suppliers',
+            data: results
+        });
+    });
+};
+
+
+exports.create = function (req, res) {
+    console.log(req.body);
+    const newOrder = new orders(req.body);
+
+    //handles null error
+    if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
+        res.status(400).send({ error: true, message: 'Please provide all required field' });
+    } else {
+        suppliers.create(newOrder, function (err, orders) {
+            if (err)
+                res.send(err);
+            /*res.json({ error: false, message: "order added successfully!", data: orders }); */
+            res.render("create_order", {
+                data: false,
+                title: "Order Added",
+                message: "Order added successfully",
+                alert: true
+
+            });
+        });
+    }
+};
+
+
+exports.findById = function (req, res) {
+    suppliers.findById(req.body.id, function (err, results) {
+        console.log(results)
+        if (err) {
+            res.send(err);
+        }
+        res.render('edit_order', {
+            title: 'Find Order',
+            data: results
+        });
+    });
+};
+
+
+exports.update = function (req, res) {
+    suppliers.update(req.body, function (err, product) {
+        if (err)
+            res.send(err);
+        //res.json({ error: false, message: 'product successfully updated' });
+        res.render("edit_order", {
+            data: false,
+            title: "Order Updated",
+            message: "Order updated successfully",
+            alert: true
+        });
+    });
+};
+
+
+exports.delete = function (req, res) {
+    suppliers.delete(req.body.id, function (err, product) {
+        if (err)
+            res.send(err);
+        //res.json({ error: false, message: 'product successfully deleted' });
+        res.render("orders", {
+            data: false,
+            title: "Product Deleted",
+            message: "Product deleted successfully",
+            alert: true
+        });
+    });
+};
