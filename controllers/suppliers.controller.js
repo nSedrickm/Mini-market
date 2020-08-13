@@ -46,8 +46,8 @@ exports.findById = function (req, res) {
         if (err) {
             res.send(err);
         }
-        res.render('edit_order', {
-            title: 'Find Order',
+        res.render('edit_supplier', {
+            title: 'Find supplier',
             data: results
         });
     });
@@ -59,10 +59,10 @@ exports.update = function (req, res) {
         if (err)
             res.send(err);
         //res.json({ error: false, message: 'product successfully updated' });
-        res.render("edit_order", {
+        res.render("edit_supplier", {
             data: false,
-            title: "Order Updated",
-            message: "Order updated successfully",
+            title: "Supplier Updated",
+            message: "Supplier updated successfully",
             alert: true
         });
     });

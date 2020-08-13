@@ -44,8 +44,8 @@ suppliers.findById = function (id, result) {
     });
 };
 
-suppliers.update = function (product, result) {
-    mysqlConn.query("UPDATE suppliers SET name=?,category=?,price=?,quantity=?,total=?,date=?,time=? WHERE id=?", [product.name, product.category, product.price, product.quantity, product.total, product.date, product.time, product.id], function (err, res) {
+suppliers.update = function (supplier, result) {
+    mysqlConn.query("UPDATE suppliers SET name=?,phone_number=?,product_name=?,category=?,price=? WHERE id=?", [supplier.name, supplier.phone_number, supplier.product_name, supplier.category, supplier.price, supplier.id], function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(null, err);
