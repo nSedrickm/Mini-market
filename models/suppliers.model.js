@@ -20,8 +20,8 @@ suppliers.findAll = function (result) {
         }
     });
 };
-suppliers.create = function (newOrder, result) {
-    mysqlConn.query("INSERT INTO suppliers set ?", newOrder, function (err, res) {
+suppliers.create = function (newSupplier, result) {
+    mysqlConn.query("INSERT INTO suppliers set ?", newSupplier, function (err, res) {
         if (err) {
             console.log("error: ", err);
             result(err, null);

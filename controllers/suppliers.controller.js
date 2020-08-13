@@ -1,6 +1,6 @@
 const suppliers = require("../models/suppliers.model");
 
-//get all orders from db
+//get all suppliers from db
 exports.findAll = (req, res) => {
     suppliers.findAll((err, results) => {
         if (err) {
@@ -18,20 +18,20 @@ exports.findAll = (req, res) => {
 
 exports.create = function (req, res) {
     console.log(req.body);
-    const newOrder = new orders(req.body);
+    const newSupplier = new suppliers(req.body);
 
     //handles null error
     if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
         res.status(400).send({ error: true, message: 'Please provide all required field' });
     } else {
-        suppliers.create(newOrder, function (err, orders) {
+        suppliers.create(newSupplier, function (err, suppliers) {
             if (err)
                 res.send(err);
-            /*res.json({ error: false, message: "order added successfully!", data: orders }); */
-            res.render("create_order", {
+            /*res.json({ error: false, message: "supplier added successfully!", data: suppliers }); */
+            res.render("create_supplier", {
                 data: false,
-                title: "Order Added",
-                message: "Order added successfully",
+                title: "supplier Added",
+                message: "supplier added successfully",
                 alert: true
 
             });
