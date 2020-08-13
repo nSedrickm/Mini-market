@@ -1,60 +1,80 @@
-<div class="content-wrapper">
-    <div class="content">
+<div class="content bg-white">
 
-        {{#if alert}}
-        <div class="alert alert-success alert-dismissible fade show m-3 shadow" role="alert">
-            {{message}}
-            <a type="button" href="/products" class="close" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </a>
-        </div>
-        <a class="btn btn-primary mx-3" href="/products">All products</a>
-        {{/if}}
+    {{#if alert}}
+    <div class="alert alert-success alert-dismissible fade show m-3 shadow" role="alert">
+        {{message}}
+        <a type="button" href="/products" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </a>
+    </div>
+    <a class="btn btn-primary mx-3" href="/products">All products</a>
+    {{/if}}
 
-        {{#if data}}<h2 class="text-center mb-2">New Product</h2>
-        <div class="col-lg-6 mx-auto bg-white p-3 shadow">
-            <form method="post" action="/create_product">
+    {{#if data}}
+    <h2 class="mb-5">New Product</h2>
+    <form method="post" action="/create_product">
+        <input type="hidden" id="id" name="id">
 
-                <input type="hidden" id="id" name="id">
-
+        <div class="form-row">
+            <div class="col-12 col-md-6">
                 <div class="form-group">
                     <label for="name">PRODUCT NAME</label>
                     <input type="text" class="form-control" id="name" name="name" aria-describedby="name"
                         placeholder="product name">
                 </div>
+            </div>
+
+            <div class="col-12 col-md-6">
                 <div class="form-group">
                     <label for="category">CATEGORY</label>
                     <input type="text" class="form-control" id="category" name="category" placeholder="category">
                 </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-12 col-md-4">
                 <div class="form-group">
                     <label for="price">UNIT PRICE</label>
                     <input type="number" class="form-control" id="price" name="price" placeholder="price">
                 </div>
+            </div>
+
+            <div class="col-12 col-md-4">
                 <div class="form-group">
                     <label for="quantity">QUANTITY</label>
                     <input type="number" class="form-control" id="quantity" name="quantity" placeholder="quantity">
                 </div>
+            </div>
+
+            <div class="col-12 col-md-4">
                 <div class="form-group">
                     <label for="supplier">SUPPLIER</label>
                     <input type="text" class="form-control" id="supplier" name="supplier" placeholder="supplier">
                 </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-12 col-md-6">
                 <div class="form-group">
                     <label for="date">DATE</label>
                     <input type="date" class="form-control" id="date" placeholder="date" name="date">
                 </div>
+            </div>
+
+            <div class="col-12 col-md-6">
                 <div class="form-group">
                     <label for="time">TIME</label>
                     <input type="time" class="form-control" id="time" placeholder="time" name="time">
                 </div>
-
-                <button type="submit" class="ladda-button btn btn-primary btn-square btn-ladda w-100"
-                    data-style="expand-left">
-                    <span class="ladda-label">Create</span>
-                    <span class="ladda-spinner"></span>
-                </button>
-            </form>
+            </div>
         </div>
-    </div>
+
+        <button type="submit" class="btn btn-primary d-block w-25 mx-auto">
+            save
+        </button>
+    </form>
 </div>
 
 <script>
