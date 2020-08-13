@@ -7,6 +7,8 @@ const productsController = require("../controllers/products.controller");
 const ordersController = require("../controllers/orders.controller");
 const homeController = require("../controllers/home.controller");
 const loginController = require("../controllers/login.controller");
+const reportsController = require("../controllers/reports.controller");
+
 
 
 
@@ -100,6 +102,10 @@ router.post('/delete_order', ordersController.delete);
 router.get('/reports', function (req, res) {
     res.render('reports');
 });
+
+router.get('/reports-product', reportsController.getProducts);
+
+router.get('/reports-orders', reportsController.getOrders);
 
 /******** *********
  * home block
