@@ -72,5 +72,4 @@ products.delete = function (id, result) {
     });
 };
 
-
 module.exports = products;

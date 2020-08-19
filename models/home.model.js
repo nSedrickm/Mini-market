@@ -21,6 +21,4 @@ getMetrics = function (result) {
     });
 };
 
-
-
 module.exports = getMetrics

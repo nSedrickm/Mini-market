@@ -15,7 +15,6 @@ exports.findAll = (req, res) => {
     });
 };
 
-
 exports.create = function (req, res) {
     console.log(req.body);
     const new_product = new products(req.body);
@@ -39,7 +38,6 @@ exports.create = function (req, res) {
     }
 };
 
-
 exports.findById = function (req, res) {
     products.findById(req.body.id, function (err, results) {
         console.log(results)
@@ -52,7 +50,6 @@ exports.findById = function (req, res) {
         });
     });
 };
-
 
 exports.update = function (req, res) {
     products.update(req.body, function (err, product) {
@@ -67,7 +64,6 @@ exports.update = function (req, res) {
         });
     });
 };
-
 
 exports.delete = function (req, res) {
     products.delete(req.body.id, function (err, product) {
