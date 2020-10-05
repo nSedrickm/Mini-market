@@ -76,15 +76,24 @@
 </div>
 
 <script>
-    var today = new Date();
-    var date = document.getElementById("date");
+    let price = document.getElementById("price");
+    let quantity = document.getElementById("quantity");
+    let total = document.getElementById("total");
+
+    quantity.addEventListener("blur", function () {
+        total.value = (price.value * quantity.value);
+    })
+
+    let today = new Date();
+    let date = document.getElementById("date");
     date.valueAsDate = today;
 
-    var time = document.getElementById("time");
+    let time = document.getElementById("time");
     time.value = today.toLocaleTimeString('en-GB', {
         hour: "numeric",
         minute: "numeric"
     });
+
 </script>
 
 {{/if}}
