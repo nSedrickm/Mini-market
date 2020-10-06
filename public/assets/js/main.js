@@ -15,45 +15,39 @@ $("#login_form").on("submit", function (event) {
 
   let username = $(this).find("#username").val();
   let password = $(this).find("#password").val();
+  let creds = {};
 
   //encrypt data
   Promise.all([hash(username), hash(password)]).then((values) => {
-    sessionStorage.removeItem("MM_HSH");
-    sessionStorage.setItem("MM_HSH", JSON.stringify(values));
+    creds = {
+      "username": values[0],
+      "password": values[1]
+    }
+    fetch('http://localhost:8001/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(creds),
+    })
+      .then(response => {
+        if (response.status != 200) {
+          throw new Error(response.statusText);
+        }
+        else {
+          setTimeout(function () {
+            $("#loading_message").text("Authentication Successful");
+            location.replace("/home");
+          }, 1500);
+        }
+      })
+      .catch((error) => {
+        $("#loading_modal").modal("hide");
+        $("#message").text("Wrong username or password");
+        $("#info_modal").modal("show");
+      });
   });
-
-  var HSH = JSON.parse(sessionStorage.getItem("MM_HSH"));
-  var creds = {
-    "username": HSH[0],
-    "password": HSH[1]
-  }
-
-  fetch('http://localhost:8001/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(creds),
-  })
-    .then(response => {
-      console.log(response.status)
-      if (response.status != 200) {
-        throw new Error(response.statusText);
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data)
-      setTimeout(function () {
-        $("#loading_message").text("Authentication Successful");
-        location.replace("/home");
-      }, 200000);
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      $("#loading_modal").modal("hide");
-      $("#message").text("Wrong username or password");
-      $("#info_modal").modal("show");
-      console.error('Something went wrong:', error);
-    });
 });
+
+
+
