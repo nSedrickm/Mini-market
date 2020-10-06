@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 14, 2020 at 11:00 AM
+-- Generation Time: Oct 06, 2020 at 08:35 AM
 -- Server version: 10.3.23-MariaDB-0+deb10u1
 -- PHP Version: 7.3.19-1~deb10u1
 
@@ -48,7 +48,7 @@ INSERT INTO `orders` (`id`, `name`, `category`, `price`, `quantity`, `total`, `d
 (4, 'Sardine', 'groceries', 500, 10, 5000, '2020-08-12', '10:00:00'),
 (5, 'Sardine', 'groceries', 500, 10, 5000, '2020-08-12', '10:00:00'),
 (6, 'Toothbrush', 'sanitation', 100, 1, 100, '2020-08-04', '07:08:00'),
-(8, 'Toothbrush', 'sanitation', 100, 1, 100, '2020-08-04', '07:10:00'),
+(8, 'Toothbrush', 'sanitation', 100, 1, 100, '2020-10-05', '10:43:00'),
 (9, 'Sardivan', 'as', 50, 5, 250, '2020-08-04', '07:21:00'),
 (10, 'Sardine', 'groceries', 500, 10, 5000, '2020-08-13', '22:09:00'),
 (11, 'Milk', 'groceries', 100, 10, 1000, '2020-08-14', '06:34:00');
@@ -110,7 +110,8 @@ INSERT INTO `products` (`id`, `name`, `category`, `price`, `quantity`, `supplier
 (42, 'fish ', 'fish ', 500, 10, 'Cold house', '2020-08-03', '20:56:00'),
 (43, 'fish ', 'fish ', 500, 10, 'Cold house', '2020-08-03', '21:00:00'),
 (45, 'Chocolate', 'candy too', 500, 18, 'CHOCOCAM', '2020-08-13', '22:28:00'),
-(46, 'Oil', 'groceries', 500, 10, 'OILCAM', '2020-08-14', '06:35:00');
+(46, 'Oil', 'groceries', 500, 10, 'OILCAM', '2020-08-14', '06:35:00'),
+(47, 'test_create_product', 'test ', 12, 15, 'test_supplier', '2020-10-05', '11:05:00');
 
 -- --------------------------------------------------------
 
@@ -156,7 +157,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `password`) VALUES
 (1, 'admin', 'admin'),
-(2, 'admin2', 'admin2');
+(3, 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec');
 
 --
 -- Indexes for dumped tables
@@ -194,13 +195,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `suppliers`
@@ -212,7 +213,7 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
