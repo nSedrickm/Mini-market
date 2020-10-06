@@ -49,5 +49,11 @@ $("#login_form").on("submit", function (event) {
   });
 });
 
+$("#logout_button").on("click", function (event) {
+  $("#logout_modal").modal("show");
+  setTimeout(function () {
+    location.replace("/");
+  }, 2000);
+});
 
 

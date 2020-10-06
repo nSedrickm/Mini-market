@@ -244,7 +244,7 @@
                   </li>
 
                   <li class="dropdown-footer">
-                    <a href="/"> <i class="mdi mdi-logout"></i> Log Out </a>
+                    <a id="logout_button""> <i class=" mdi mdi-logout"></i> Log Out </a>
                   </li>
                 </ul>
               </li>
@@ -340,6 +340,18 @@
         </script>
       </footer>
 
+      <!-- spinner -->
+      <div class="modal" id="logout_modal" tabindex="-1" role="dialog" aria-labelledby="logout_modalTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered border-0" role="document">
+          <div class="modal-content transparent">
+            <div class="spinner-border mx-auto text-white" style="width:5rem; height:5rem;" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <h3 class="text-center text-white my-5"> Loggin Out ... </h3>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
