@@ -23,7 +23,7 @@ $("#login_form").on("submit", function (event) {
       "username": values[0],
       "password": values[1]
     }
-    fetch('http://localhost:8001/login', {
+    fetch('/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
