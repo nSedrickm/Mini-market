@@ -9,7 +9,7 @@ const mysqlConn = mysql.createPool({
     password: 'dac4546c',
     database: 'heroku_3fb3a0c1a7020c0'
 });
-pool.on('acquire', function (connection) {
+mysqlConn.on('acquire', function (connection) {
     console.log('Connection %d acquired', connection.threadId);
     console.log("Database Connected!");
 });
