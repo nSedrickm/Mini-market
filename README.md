@@ -5,3 +5,10 @@
 
 - [Sleek dashboard](https://github.com/tafcoder/sleek-dashboard)
 
+## Demo
+
+link : https://minimarketalpha.herokuapp.com/
+
+username : admin
+
+password : admin
