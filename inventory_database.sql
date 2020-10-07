@@ -36,7 +36,7 @@ CREATE TABLE `orders` (
   `quantity` int(11) NOT NULL,
   `total` int(100) NOT NULL,
   `date` text NOT NULL,
-  `time` time NOT NULL DEFAULT current_timestamp()
+  `time` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `products` (
   `quantity` int(11) NOT NULL,
   `supplier` varchar(100) NOT NULL,
   `date` text NOT NULL,
-  `time` time NOT NULL DEFAULT current_timestamp()
+  `time` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
